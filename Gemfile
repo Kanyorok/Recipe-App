@@ -71,4 +71,5 @@ group :test do
 
 end
 
+# Authentication gem
 gem "devise", "~> 4.9"
