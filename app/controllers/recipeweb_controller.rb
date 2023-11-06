@@ -1,3 +1,0 @@
-class RecipewebController < ApplicationController
-
-end
