@@ -2,10 +2,14 @@
   <div class="container-fluid mx-5">
     <%= link_to 'Recipe Application', root_path, class: 'navbar-brand' %>
     <div>
-      <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
+      <div class="d-flex">
+        <% if user_signed_in? %>
+          <%= button_to 'Sign out', destroy_user_session_path, method: :delete, class: ['btn', 'btn-outline-success'] %>
+        <% else %>
+          <li>  <%= link_to 'Login', user_session_path, class: ['btn', 'btn-outline-success'] %></li>
+          <li>  <%= link_to 'Sign up', new_user_registration_path, class: ['btn', 'btn-outline-success'] %></li>
+        <% end %>
+      </div>
     </div>
   </div>
 </nav>
