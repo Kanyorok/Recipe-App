@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
   get '/sign_out_user', to: 'users#sign_out_user', as: 'sign_out_user'
   devise_for :users
-  root 'users#index'
-  resources :publicrecipes, only: %i[index show] do
+  root 'public_recipes#index'
+  resources :public_recipes, only: %i[index show] do
   end
   resources :recipes, only: %i[index show new create destroy update edit] do
   end
