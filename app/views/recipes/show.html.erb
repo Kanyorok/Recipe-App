@@ -3,6 +3,29 @@
 <p>Cooking Time: <%= @recipe.cooking_time %></p>
 <p>Description: <%= @recipe.description %></p>
 
+<div class="makepublicform">
+<%= form_with(model: @recipe, url: recipe_path(@recipe), method: :patch) do |form| %>
+  <span>Toggle Public</span>
+  <%= form.check_box :public %>
+  <%= form.submit "Save" %>
+<% end %>
+</div>
+
+<div class="makepublicform">
+  <%= form_with(model: @recipe, url: recipe_path(@recipe), method: :patch) do |form| %>
+    <div class="toggle-button-container" onclick="togglePublic();">
+        <span class="toggle-text" id="toggleText">
+            <%= @recipe.public ? 'Toggle Private' : 'Toggle Public' %>
+        </span>
+        <%= form.hidden_field :public, value: @recipe.public, id: 'public-toggle-field' %>
+        <%= form.label :public, class: 'toggle-button', for: 'public-toggle-field' do %>
+        <div class="slider <%= 'slide' if @recipe.public %>"></div>
+        <% end %>
+    </div>
+    <%= form.submit "Save", id: 'save-button', style: 'display: none;' %>
+  <% end %>
+</div>
+
 <h2 class="lefth2">Ingredients</h2>
 <ul class="table">
 <li class="tableheader">

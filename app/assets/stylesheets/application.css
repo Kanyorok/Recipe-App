@@ -246,4 +246,56 @@
     align-items: center;
     justify-content: space-between;
   }
+
+  .formal-display {
+    display: flex;
+    justify-content: space-between;
+    align-content: space-between;
+    align-items: stretch;
+    flex-wrap: wrap;
+  }
   
+  .makepublicform {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .toggle-button {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 30px;
+    background-color: #0096FF;
+    border-radius: 15px;
+    cursor: pointer;
+    overflow: hidden;
+  }
+
+  .slider {
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 24px;
+    height: 24px;
+    background-color: #fff;
+    border-radius: 50%;
+    transition: 0.4s;
+  }
+
+  .toggle-button-container {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+  }
+
+  .slider.slide {
+    transform: translateX(30px);
+  }
+
+  input[type="checkbox"] {
+    display: none;
+  }
+
+  .toggle-button.public-color {
+    background-color: greenyellow; /* Change the color to blue */
+  }
