@@ -12,7 +12,7 @@
 		<!-- section title ends -->
 		<div class="row">
 			<% @public_recipes.each do |recipe| %>
-            	<%= render partial: 'recipe', locals: { recipe: recipe } %>
+            	<%= render partial: 'publicrecipe', locals: { recipe: recipe } %>
 			<% end %>
 		</div>    
 	</div>
