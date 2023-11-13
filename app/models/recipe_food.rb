@@ -3,6 +3,6 @@ class RecipeFood < ApplicationRecord
   belongs_to :food_name, class_name: 'Food', foreign_key: 'food_id'
 
   def calculate_value
-    self.value = quantity * food.price.to_f
+    self.value = quantity * food_name.price.to_f
   end
 end
