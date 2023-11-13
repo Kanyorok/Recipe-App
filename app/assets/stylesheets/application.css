@@ -299,3 +299,29 @@
   .toggle-button.public-color {
     background-color: greenyellow; /* Change the color to blue */
   }
+
+  .table {
+    width: 100%;
+    margin-top: 1rem;
+    border-collapse: collapse;
+  }
+
+  .tableheader {
+    background-color: #f8f9fa; /* Bootstrap table header color */
+  }
+
+  .tablecol {
+    padding: 0.75rem;
+    text-align: left;
+    border-bottom: 1px solid #dee2e6; /* Bootstrap table border color */
+  }
+
+  .tablebody {
+    background-color: #fff; /* Bootstrap table body color */
+  }
+
+  .formatrecipeview {
+    display: flex;
+    flex-direction: column;
+    align-content: space-between;
+  }

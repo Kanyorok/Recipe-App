@@ -1,43 +1,70 @@
-<h2><%= @recipe.name %></h2>
-<p>Preparation Time: <%= @recipe.preparation_time %></p>
-<p>Cooking Time: <%= @recipe.cooking_time %></p>
-<p>Description: <%= @recipe.description %></p>
-
-<div class="makepublicform">
-<%= form_with(model: @recipe, url: recipe_path(@recipe), method: :patch) do |form| %>
-  <span>Toggle Public</span>
-  <%= form.check_box :public %>
-  <%= form.submit "Save" %>
-<% end %>
-</div>
-
-<div class="makepublicform">
-  <%= form_with(model: @recipe, url: recipe_path(@recipe), method: :patch) do |form| %>
-    <div class="toggle-button-container" onclick="togglePublic();">
-        <span class="toggle-text" id="toggleText">
-            <%= @recipe.public ? 'Toggle Private' : 'Toggle Public' %>
-        </span>
-        <%= form.hidden_field :public, value: @recipe.public, id: 'public-toggle-field' %>
-        <%= form.label :public, class: 'toggle-button', for: 'public-toggle-field' do %>
-        <div class="slider <%= 'slide' if @recipe.public %>"></div>
-        <% end %>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <h2><%= @recipe.name %></h2>
+      <p>Preparation Time: <%= @recipe.preparation_time %></p>
+      <p>Cooking Time: <%= @recipe.cooking_time %></p>
+      <p>Description: <%= @recipe.description %></p>
     </div>
-    <%= form.submit "Save", id: 'save-button', style: 'display: none;' %>
-  <% end %>
+    <div class="col-md-6">
+      <div class="formatrecipeview">
+        <div class="makepublicform">
+          <%= form_with(model: @recipe, url: recipe_path(@recipe), method:
+          :patch) do |form| %>
+          <div
+            class="toggle-button-container d-flex align-items-center justify-content-around"
+            onclick="togglePublic();"
+          >
+            <span class="toggle-text" id="toggleText">
+              <%= @recipe.public ? 'Toggle Private' : 'Toggle Public' %>
+            </span>
+            <%= form.hidden_field :public, value: @recipe.public, id:
+            'public-toggle-field' %> <%= form.label :public, class:
+            'toggle-button', for: 'public-toggle-field' do %>
+            <div class="slider <%= 'slide' if @recipe.public %>"></div>
+            <% end %>
+          </div>
+          <%= form.submit "Save", id: 'save-button', style: 'display: none;' %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
+<div class="formatrecipeview">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <%= link_to 'Generate General Shopping List', general_shopping_lists_path,
+        class:'btn btn-secondary' %>
+      </div>
+      <div class="col-md-6">
+        <%= link_to 'Add Ingredients', new_recipe_recipe_food_path(@recipe),
+        class:'btn btn-secondary' %>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Bootstrap Table for Ingredients -->
 <h2 class="lefth2">Ingredients</h2>
-<ul class="table">
-<li class="tableheader">
-<span class="tablecol">Foods</span>
-<span class="tablecol">Quantity</span>
-<span class="tablecol">Value</span>
-</li>
-  <% @recipe.recipe_foods.each do |recipe_food| %>
-    <li class="tablebody">
-    <span class="tablecol"><%= recipe_food.food_name.name %></span>
-    <span class="tablecol"><%= recipe_food.quantity %><%= recipe_food.food_name.measurement_unit %></span>
-    <span class="tablecol">$<%= recipe_food.value %></span>
-    </li>
-  <% end %>
-</ul>
+<table class="table">
+  <thead>
+    <tr class="tableheader">
+      <th class="tablecol">Foods</th>
+      <th class="tablecol">Quantity</th>
+      <th class="tablecol">Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @recipe.recipe_foods.each do |recipe_food| %>
+    <tr class="tablebody">
+      <td class="tablecol"><%= recipe_food.food_name.name %></td>
+      <td class="tablecol">
+        <%= recipe_food.quantity %><%= recipe_food.food_name.measurement_unit %>
+      </td>
+      <td class="tablecol">$<%= recipe_food.value %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
