@@ -1,1 +1,38 @@
-<h2>The created foods</h2>
+<section class="my-blog bg-secondary bg-gradient">
+    <div class="container">
+		<div class="row justify-content-md-center">
+			<div class="col-xl-5 col-lg-6 col-md-8">
+				<div class="section-title text-center title-ex1">
+                    Add new Recipe
+					<%= link_to 'Add New recipe', new_food_path, class:'btn btn-primary'%>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+            <table class="table">
+                <thead>
+                    <tr class="tableheader">
+                    <th class="tablecol">Food Name</th>
+                    <th class="tablecol">Measurement Unit</th>
+                    <th class="tablecol">Price per Unit</th>
+                    <th class="tablecol">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% @foods.each do |food| %>
+                        <tr class="tablebody">
+                            <td class="tablecol"><%= food.name %></td>
+                            <td class="tablecol">
+                                <%= food.measurement_unit %>
+                            </td>
+                            <td class="tablecol">$<%= food.price %></td>
+                            <td class="tablecol">
+                                <%= button_to 'REMOVE', food, class: 'btn btn-danger', method: :delete %>
+                            </td>
+                        </tr>
+                    <% end %>
+                </tbody>
+            </table>
+		</div>    
+	</div>
+</section>
