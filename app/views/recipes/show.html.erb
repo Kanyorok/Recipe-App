@@ -36,8 +36,8 @@
   <div class="container">
     <div class="row">
       <div class="col-md-6">
-        <%= link_to 'Generate General Shopping List', general_shopping_lists_path,
-        class:'btn btn-secondary' %>
+        <%= link_to 'Generate General Shopping List',
+        general_shopping_lists_path, class:'btn btn-secondary' %>
       </div>
       <div class="col-md-6">
         <%= link_to 'Add Ingredients', new_recipe_recipe_food_path(@recipe),
@@ -66,8 +66,10 @@
       </td>
       <td class="tablecol">$<%= recipe_food.value %></td>
       <td class="tablecol">
-        <%= link_to 'Modify', edit_recipe_recipe_food_path(@recipe, recipe_food), class:'btn btn-secondary' %>
-        <%= button_to 'Remove', recipe_recipe_food_path(@recipe, recipe_food), class:'btn btn-secondary', method: :delete %>
+        <%= link_to 'Modify', edit_recipe_recipe_food_path(@recipe,
+        recipe_food), class:'btn btn-secondary' %> <%= button_to 'Remove',
+        recipe_recipe_food_path(@recipe, recipe_food), class:'btn
+        btn-secondary', method: :delete %>
       </td>
     </tr>
     <% end %>
