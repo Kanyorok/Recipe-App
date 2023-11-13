@@ -3,7 +3,6 @@
 		<div class="row justify-content-md-center">
 			<div class="col-xl-5 col-lg-6 col-md-8">
 				<div class="section-title text-center title-ex1">
-                    Add new Recipe
 					<%= link_to 'Add New recipe', new_food_path, class:'btn btn-primary'%>
 				</div>
 			</div>
@@ -27,7 +26,7 @@
                             </td>
                             <td class="tablecol">$<%= food.price %></td>
                             <td class="tablecol">
-                                <%= button_to 'REMOVE', food, class: 'btn btn-danger', method: :delete %>
+                                <%= button_to 'REMOVE', food_path(food), method: :delete, class: 'btn btn-danger', data: { confirm: 'Are you sure?'} %>
                             </td>
                         </tr>
                     <% end %>
