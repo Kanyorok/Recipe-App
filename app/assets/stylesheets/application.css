@@ -1,3 +1,10 @@
+body {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
 .my-blog {
   padding-top: 80px;
   padding-bottom: 50px;
@@ -292,10 +299,6 @@
   transform: translateX(30px);
 }
 
-input[type="checkbox"] {
-  display: none;
-}
-
 .toggle-button.public-color {
   background-color: greenyellow; /* Change the color to blue */
 }
@@ -324,4 +327,52 @@ input[type="checkbox"] {
   display: flex;
   flex-direction: column;
   align-content: space-between;
+}
+
+.sign-up-container,
+.login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#user_name,
+#user_surname,
+#user_email,
+#user_password,
+#user_password_confirmation {
+  width: 100%;
+  padding: 4px;
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;
+}
+
+#sign-up-button,
+#login-button {
+  width: 100%;
+  padding: 8px;
+  background-color: rgba(15, 15, 15, 0.9);
+  color: #fff;
+  font-weight: 500;
+  border: none;
+  border-radius: 4px;
+}
+
+#new_user {
+  min-width: 235px;
+}
+
+.mx-5 {
+  margin-top: 1.2rem;
+  margin-bottom: 1.2rem;
+}
+
+li.nav-item {
+  font-weight: 500;
+  padding: 0 12px;
+  font-size: 1.2rem;
 }
