@@ -56,8 +56,11 @@
         slider.classList.add('slide');
       }
     });
-    $(document).ready(function() {
+    $(document).on('turbo:load', function() {
       $('#FoodIngredientsTable').DataTable();
+      $('#RecipeIngredientsTable').DataTable();
+      $('#FoodItemsTable').DataTable();
+      $('#ShoppingListTable').DataTable();
     });
 
     function togglePublic() {
