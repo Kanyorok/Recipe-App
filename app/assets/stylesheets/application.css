@@ -494,7 +494,7 @@ input#add-food-action {
   border-radius: 4px;
 }
 
-.row.add-food-item-action, 
+.row.add-food-item-action,
 .add-recipe-action-container {
   justify-content: flex-end;
   margin: 0 0 4% 0;
@@ -533,7 +533,7 @@ form#add-new-recipe-form {
 
 input#add-food-item-action,
 input#add-recipe-action {
-  margin: 11% 0px;
+  margin: 11% 0;
   border: none;
   background: #000;
   color: #fff;
