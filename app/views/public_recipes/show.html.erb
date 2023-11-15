@@ -1,23 +1,26 @@
-<h2><%= @recipe.name %></h2>
-<p>Preparation Time: <%= @recipe.preparation_time %></p>
-<p>Cooking Time: <%= @recipe.cooking_time %></p>
-<p>Description: <%= @recipe.description %></p>
+<div class="each-public-recipe-container">
+  <h1><%= @recipe.name %></h1>
+  <p class="each-recipe-p-tag"><span class="each-recipe-span">Preparation Time: </span><%= @recipe.preparation_time %></p>
+  <p class="each-recipe-p-tag"><span class="each-recipe-span">Cooking Time: </span><%= @recipe.cooking_time %></p>
+  <p class="each-recipe-p-tag"><span class="each-recipe-span">Description: </span><%= @recipe.description %></p>
 
-<h2 class="lefth2">Ingredients</h2>
-<ul class="table">
-  <li class="tableheader">
-    <span class="tablecol">Foods</span>
-    <span class="tablecol">Quantity</span>
-    <span class="tablecol">Value</span>
-  </li>
-  <% @recipe.recipe_foods.each do |recipe_food| %>
-  <li class="tablebody">
-    <span class="tablecol"><%= recipe_food.food_name.name %></span>
-    <span class="tablecol"
-      ><%= recipe_food.quantity %><%= recipe_food.food_name.measurement_unit
-      %></span
-    >
-    <span class="tablecol">$<%= recipe_food.value %></span>
-  </li>
-  <% end %>
-</ul>
+  <h2 class="lefth2">Ingredients</h2>
+  <table id="FoodIngredientsTable" class="table">
+    <thead>
+      <tr class="tableheader">
+        <th class="colheading sortable">Foods</th>
+        <th class="colheading sortable">Quantity</th>
+        <th class="colheading sortable">Value</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @recipe.recipe_foods.each do |recipe_food| %>
+        <tr class="tableheader">
+          <td class="tablecol"><%= recipe_food.food_name.name %></td>
+          <td class="tablecol"><%= recipe_food.quantity %><%= recipe_food.food_name.measurement_unit %></td>
+          <td class="tablecol">$<%= recipe_food.value %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
