@@ -217,7 +217,7 @@ body {
 .media.blog-media .media-body ul {
   padding: 10px 20px 0 0;
   flex-direction: column;
-  gap: 24px
+  gap: 24px;
 }
 
 .media.blog-media .media-body ul li {
@@ -337,13 +337,13 @@ table.dataTable.no-footer {
   border: 1px solid #111;
 }
 
+table.dataTable th {
+  width: 33.33%;
+}
+
 table.dataTable thead th {
   border-bottom: 0;
   border-right: 1px solid black;
-}
-
-table.dataTable th{
-  width: 33.33%;
 }
 
 .formatrecipeview {
