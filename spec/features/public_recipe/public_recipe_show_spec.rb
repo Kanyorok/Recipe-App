@@ -25,12 +25,12 @@ RSpec.describe 'Public Recipe', type: :system do
     sleep(1)
     click_link @r2.name
     sleep(1)
-    expect(page).to have_content("#{@r2.name}")
+    expect(page).to have_content(@r2.name.to_s)
     expect(page).to have_content("Preparation Time: #{@r2.preparation_time}")
     expect(page).to have_content("Cooking Time: #{@r2.cooking_time}")
     expect(page).to have_content("Description: #{@r2.description}")
     expect(page).to have_content('Ingredients')
-    expect(page).to have_content("#{@f2.name}")
+    expect(page).to have_content(@f2.name.to_s)
     expect(page).to have_content('3')
   end
 end

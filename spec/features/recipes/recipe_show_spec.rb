@@ -8,8 +8,9 @@ RSpec.describe 'Recipe Details', type: :system do
     User.delete_all
 
     @user = User.create(name: 'User one', email: 'userone@gmail.com', password: 'userone')
-    @recipe = Recipe.create(user: @user, name: 'User one Recipe',
-                            description: 'Recipe one by user one description', preparation_time: 1, cooking_time: 1, public: true)
+    recipe = { user: @user, name: 'User one Recipe',
+               description: 'Recipe one by user one description', preparation_time: 1, cooking_time: 1, public: true }
+    @recipe = Recipe.create(recipe)
     @food = Food.create(user: @user, name: 'Food item', measurement_unit: 'kg', price: 1, quantity: 1)
     @food2 = Food.create(user: @user, name: 'New Food item', measurement_unit: 'kg', price: 1, quantity: 1)
     @recipe_food = RecipeFood.create(recipe_name: @recipe, food_name: @food, quantity: 2)

@@ -31,15 +31,15 @@ RSpec.describe 'Public Recipe', type: :system do
     visit public_recipes_path
     sleep(1)
     expect(page).to have_content('Public Recipes by Users')
-    expect(page).to have_content("#{@r1.name}")
+    expect(page).to have_content(@r1.name.to_s)
     expect(page).to have_content('By: User')
     expect(page).to have_content('Total food items: 0')
     expect(page).to have_content('Total price: $0')
-    expect(page).to have_content("#{@r2.name}")
+    expect(page).to have_content(@r2.name.to_s)
     expect(page).to have_content('By: User two')
     expect(page).to have_content('Total food items: 1')
     expect(page).to have_content('Total price: $6.0')
-    expect(page).not_to have_content("#{@r3.name}")
+    expect(page).not_to have_content(@r3.name.to_s)
   end
 
   context 'Public Recipe link action' do

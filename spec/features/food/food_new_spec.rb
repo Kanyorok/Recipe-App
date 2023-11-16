@@ -28,8 +28,8 @@ RSpec.describe 'New Food', type: :system do
       click_button 'Add Food'
       sleep(1)
       expect(current_path).to eq(foods_path)
-      expect(page).to have_content("#{@f1.name}")
-      expect(page).to have_content("#{@f1.measurement_unit}")
+      expect(page).to have_content(@f1.name.to_s)
+      expect(page).to have_content(@f1.measurement_unit.to_s)
       expect(page).to have_content('10')
     end
   end

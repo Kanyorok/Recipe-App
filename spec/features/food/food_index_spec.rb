@@ -21,8 +21,8 @@ RSpec.describe 'Food', type: :system do
     visit foods_path
     sleep(1)
     expect(page).to have_content('Add Food Item')
-    expect(page).to have_content("#{@f1.name}")
-    expect(page).to have_content("#{@f1.measurement_unit}")
+    expect(page).to have_content(@f1.name.to_s)
+    expect(page).to have_content(@f1.measurement_unit.to_s)
     expect(page).to have_content('10')
   end
 
