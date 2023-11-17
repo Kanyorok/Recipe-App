@@ -17,7 +17,7 @@
                         </div>
                         <div class="col-md-6">
                             <div>
-                                <p><%= recipe.description%></p>
+                                <p class="recipe-card-p"><%= truncate(recipe.description, length: 100, omission: '.....') %></p>
                             </div>
                         </div>
                     </div>
