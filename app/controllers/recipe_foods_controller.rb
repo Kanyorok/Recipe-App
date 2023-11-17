@@ -34,8 +34,11 @@ class RecipeFoodsController < ApplicationController
 
   def destroy
     @recipe_food = @recipe.recipe_foods.find(params[:id])
-    @recipe_food.destroy
-    redirect_to @recipe, notice: 'Food removed successfully.'
+    if @recipe_food.destroy
+      redirect_to @recipe, notice: 'Food removed successfully.'
+    else
+      redirect_to @recipe, alert: 'Failed to Remove Food Item!'
+    end
   end
 
   private
