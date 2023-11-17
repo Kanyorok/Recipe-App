@@ -24,6 +24,7 @@ class RecipeFoodsController < ApplicationController
     if @recipe_food.save
       redirect_to @recipe, notice: 'Food updated successfully.'
     else
+      flash.now[:alert] = 'Failed to Update the Food item!'
       render :edit
     end
   end
