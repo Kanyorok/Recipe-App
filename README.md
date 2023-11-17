@@ -3,7 +3,7 @@
   <!-- You are encouraged to replace this logo with your own! Otherwise you can also remove it. -->
   <br/>
 
-  <h3><b>WriteWave Blog App</b></h3>
+  <h3><b>Recipe Application Rails Project</b></h3>
 
 </div>
 
@@ -128,6 +128,11 @@ To run tests, run the following command:
 - Twitter: [@CarlosMbugua](https://twitter.com/CarlosMbugua)
 - LinkedIn: [Robert Mbugua](https://www.linkedin.com/in/robert-mbugua-kanyoro/)
 
+👤 **Tanmayi Manku**
+
+- GitHub: [@tan12082001](https://github.com/tan12082001)
+- LinkedIn: [Tanmayi Manku](https://www.linkedin.com/in/tanmayi-manku-99195720a/)
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -146,7 +151,7 @@ To run tests, run the following command:
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/Kanyorok/WriteWave-Blog/issues).
+Feel free to check the [issues page](https://github.com/Kanyorok/Recipe-App/issues).
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
